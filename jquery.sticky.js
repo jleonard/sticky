@@ -74,6 +74,8 @@
         var s = sticked[i];
         if (typeof s.getWidthFrom !== 'undefined' && s.responsiveWidth === true) {
           s.stickyElement.css('width', $(s.getWidthFrom).width());
+          // recalculate adaptive height
+          s.stickyElement.parent().css('height', s.stickyElement.outerHeight());
         }
       }
     },
