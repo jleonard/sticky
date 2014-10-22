@@ -12,6 +12,7 @@
 
 (function($) {
   var defaults = {
+      position: 'absolute',
       topSpacing: 0,
       bottomSpacing: 0,
       className: 'is-sticky',
@@ -54,7 +55,7 @@
           }
           if (s.currentTop != newTop) {
             s.stickyElement
-              .css('position', 'fixed')
+              .css('position', s.position)
               .css('top', newTop);
 
             if (typeof s.getWidthFrom !== 'undefined') {
